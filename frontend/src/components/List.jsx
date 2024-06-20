@@ -43,27 +43,22 @@ function List({ Phone, setPhone, dataFetch, ordersRes }) {
         <div className="w-full p-4"
           style={{ cursor: 'pointer' }}>
           <div className="flex justify-between m-3 ">
-            <p className='text-3xl'>{order.order_number}</p>
-            <p className='text-lg'>{findStatus(order.cancelled, order.fullfilment_status)}</p>
+            <p className='text-3xl font-questrial'>{order.order_number}</p>
+            <p className='text-lg font-questrial'>{findStatus(order.cancelled, order.fullfilment_status)}</p>
           </div>
           <div className='my-3'>
-            <p className='my-3'>Total : ₹ {Math.round(order.price)}</p>
-            <p className='my-3'>Ordered On  : {new Date(order.created_at).toLocaleString('en-US', options)}</p>            
+            <p className='my-3 font-questrial'>Total : ₹ {Math.round(order.price)}</p>
+            <p className='my-3 font-questrial'>Ordered On  : {new Date(order.created_at).toLocaleString('en-US', options)}</p>            
           </div>
           <div className='flex justify-between my-3 mt-5'> 
-            <button onMouseDown={(e) => handleExchangeClick(e, order.order_number)} className='bg-black text-white p-1 px-5 rounded-full text-lg focus:outline-none'>Return</button>
-            {/* <button onMouseDown={(e) => handleExchangeClick(e, order.order_number)} className='bg-black text-white p-1 px-5 rounded-full text-lg focus:outline-none'><strong>Return</strong></button>
-            <button onMouseDown={(e) => handleOrderClick(e, order.order_number)} className='bg-black text-white p-1 px-5 rounded-full focus:outline-none'><strong>Details</strong></button> */}
-            <button onMouseDown={(e) => handleOrderClick(e, order.order_number)} className='bg-black text-white p-1 px-5 rounded-full focus:outline-none'>Details</button>
+            <button onMouseDown={(e) => handleExchangeClick(e, order.order_number)} className='bg-black text-white p-1 px-5 rounded-full text-lg focus:outline-none font-questrial'>Return</button>
+            <button onMouseDown={(e) => handleOrderClick(e, order.order_number)} className='bg-black text-white p-1 px-5 rounded-full focus:outline-none font-questrial'>Details</button>
           </div>
         </div>
       </div>
     )));
   }, [ordersRes, navigate]);
 
-  const togglePopup = () => {
-    setShowPopup(!showPopup);
-  };
 
   return (
     <div className="bg-gray-200 min-h-screen flex flex-col">

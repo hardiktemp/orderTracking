@@ -10,7 +10,7 @@ function Home({ Phone, setPhone, dataFetch }) {
                 </a>
             </div>
             <div className="w-full px-4">
-                <h1 className="text-4xl m-5 my-14 text-center">
+                <h1 className="text-4xl m-5 my-14 text-center font-questrial">
                     <strong>
                         Find Your
                         <br />
@@ -23,12 +23,12 @@ function Home({ Phone, setPhone, dataFetch }) {
                         value={Phone}
                         onChange={(e) => setPhone(e.target.value)}
                         type="number"
-                        className="border-2 border-gray-300 p-2 rounded-md text-center w-80 max-w-sm focus:outline-none focus:border-black"
+                        className="border-2 border-gray-300 p-2 rounded-full text-center w-80 max-w-sm focus:outline-none focus:border-black font-questrial"
                         placeholder="Phone Number"
                     />
                 </div>
                 <div className="flex justify-center mt-8">
-                    <SearchButton Phone={Phone} dataFetch={dataFetch} style="p-4 px-8 rounded-full bg-black text-white w-64 text-center" className="w-64"/>
+                    <SearchButton Phone={Phone} dataFetch={dataFetch} style="p-4 px-8 rounded-full bg-black text-white w-64 text-center font-questrial" className="w-64"/>
                 </div>
             </div>
         </div>
