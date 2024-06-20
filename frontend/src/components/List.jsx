@@ -67,6 +67,11 @@ function List({ Phone, setPhone, dataFetch, ordersRes }) {
 
   return (
     <div className="bg-gray-200 min-h-screen flex flex-col">
+        <div className="flex justify-center p-3">
+            <a href="https://shop.thrd.store/">
+                <img src="//shop.thrd.store/cdn/shop/files/black.png?" className="w-16" alt="Logo" />
+            </a>
+        </div>
       <div className="sticky top-0 z-10 bg-gray-200">
         <SearchBar Phone={Phone} setPhone={setPhone} dataFetch={dataFetch} />
       </div>
