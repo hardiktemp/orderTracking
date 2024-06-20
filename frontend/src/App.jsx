@@ -17,7 +17,7 @@ function App() {
       console.log(numericString);
       const rightmost10Digits = numericString.slice(-10);
       setPhone(rightmost10Digits);
-      const response = await axios.post(`${API_URL}/getOrders`, { phone: Phone });
+      const response = await axios.post(`${API_URL}/getOrders`, { phone: rightmost10Digits });
       // console.log(response.data);
       setOrdersRes(response.data);
     } catch (error) {
