@@ -18,7 +18,6 @@ function Home({ Phone, setPhone, dataFetch }) {
                     </strong>
                 </h1>
                 <div className="m-5 mt-14 flex flex-col items-center">
-                    <label htmlFor="phone-input" className="text-lg mb-2">Phone No</label>
                     <input
                         id="phone-input"
                         value={Phone}

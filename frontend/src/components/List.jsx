@@ -36,11 +36,10 @@ function List({ Phone, setPhone, dataFetch, ordersRes }) {
     };
     const handleExchangeClick = (e, orderNumber) => {
       let clickedOrder = ordersRes.find(order => order.order_number === orderNumber);
-      console.log(`https://api.whatsapp.com/send?phone=917726915904&text=I would like to return / exchange for order: ${clickedOrder.order_number}`);
       window.open(`https://api.whatsapp.com/send?phone=917726915904&text=I would like to return / exchange for order: ${clickedOrder.order_number}`, '_blank');
     };
     setOrders(ordersRes.map((order, index) => (
-      <div key={index} className={'mx-5 border-b-2 p-1 bg-gray-50 m-2 rounded-2xl'}>
+      <div key={index} className={'mx-5 border-b-2 p-1 bg-gray-50 m-3 rounded-2xl'}>
         <div className="w-full p-4"
           style={{ cursor: 'pointer' }}>
           <div className="flex justify-between m-3 ">
@@ -51,9 +50,11 @@ function List({ Phone, setPhone, dataFetch, ordersRes }) {
             <p className='my-3'>Total : ₹ {Math.round(order.price)}</p>
             <p className='my-3'>Ordered On  : {new Date(order.created_at).toLocaleString('en-US', options)}</p>            
           </div>
-          <div className='flex justify-between my-3'> 
-            <button onMouseDown={(e) => handleExchangeClick(e, order.order_number)} className='bg-black text-white p-2 px-8 rounded-full text-lg focus:outline-none'><strong>Return</strong></button>
-            <button onMouseDown={(e) => handleOrderClick(e, order.order_number)} className='bg-black text-white p-2 px-8 rounded-full focus:outline-none'><strong>Details</strong></button>
+          <div className='flex justify-between my-3 mt-5'> 
+            <button onMouseDown={(e) => handleExchangeClick(e, order.order_number)} className='bg-black text-white p-1 px-5 rounded-full text-lg focus:outline-none'>Return</button>
+            {/* <button onMouseDown={(e) => handleExchangeClick(e, order.order_number)} className='bg-black text-white p-1 px-5 rounded-full text-lg focus:outline-none'><strong>Return</strong></button>
+            <button onMouseDown={(e) => handleOrderClick(e, order.order_number)} className='bg-black text-white p-1 px-5 rounded-full focus:outline-none'><strong>Details</strong></button> */}
+            <button onMouseDown={(e) => handleOrderClick(e, order.order_number)} className='bg-black text-white p-1 px-5 rounded-full focus:outline-none'>Details</button>
           </div>
         </div>
       </div>
